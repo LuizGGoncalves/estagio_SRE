@@ -1,0 +1,24 @@
+name: Ci
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 3.2
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+      - name: Run rubocop
+        run: |
+          bundle exec rubocop
+      - name: Run tests
+        run: |
+          bundle exec rspec --fail-fast
