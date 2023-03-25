@@ -9,6 +9,7 @@ gem "puma", "~> 5.0"
 gem "jbuilder"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "bootsnap", require: false
+gem 'rufus-scheduler', require: false
 
 group :development, :test do
   gem 'rspec-rails'
