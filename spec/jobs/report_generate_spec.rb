@@ -14,8 +14,8 @@ RSpec.describe ReportGenerate, type: :job do
         expected_output = [
           { "errorCount" => 248, "path" => "/path1", "successCount" => 0 },
           { "errorCount" => 250, "path" => "/api/path3", "successCount" => 2 },
-          { "errorCount" => 255, "path" => "/path2", "successCount" =>1 },
-          { "errorCount" => 243, "path" => "/", "successCount"=> 1 },
+          { "errorCount" => 255, "path" => "/path2", "successCount" => 1 },
+          { "errorCount" => 243, "path" => "/", "successCount" => 1 },
         ]
 
         output_data = JSON.parse(File.read(output_file_path + '/output.json'))
