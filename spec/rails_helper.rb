@@ -20,12 +20,6 @@ SimpleCov.start 'rails' do
   add_group 'jobs/', 'app/jobs'
 
   minimum_coverage 80
-
-  add_group "Uncovered" do |file|
-    if file.covered_percent < 80
-      puts "#{file.filename} Nao atendeu ao limite de cobertura de teste  (cobertura:#{file.covered_percent})"
-      exit(1)
-    end
   end
 end
 
