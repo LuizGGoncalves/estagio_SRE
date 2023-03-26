@@ -5,6 +5,8 @@ COPY Gemfile /estagioSRE/Gemfile
 COPY Gemfile.lock /estagioSRE/Gemfile.lock
 RUN bundle install
 
+VOLUME /output_data
+
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
