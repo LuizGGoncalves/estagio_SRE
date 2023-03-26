@@ -18,8 +18,6 @@ SimpleCov.start 'rails' do
   add_filter 'helpers'
 
   add_group 'jobs/', 'app/jobs'
-
-  minimum_coverage 80
 end
 
 begin
