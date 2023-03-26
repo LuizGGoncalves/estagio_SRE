@@ -1,5 +1,5 @@
 class ReportGenerate < ApplicationJob
-  def perform(path= 'output_data/sre-intern-test')
+  def perform(path = 'output_data/sre-intern-test')
     results = generate_json_repot(logs_data)
     save_repot_json_local(results, path)
   end

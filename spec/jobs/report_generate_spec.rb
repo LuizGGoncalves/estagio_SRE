@@ -8,15 +8,14 @@ RSpec.describe ReportGenerate, type: :job do
     subject { described_class.new.perform(output_file_path) }
 
     context 'when the log file is present and contains data' do
-
       it 'generates an output file with the correct data' do
         subject
         expect(File.exist?(output_file_path + '/output.json')).to be_truthy
         expected_output = [
-          { "errorCount" => 248, "path"=>"/path1", "successCount" => 0 },
-          { "errorCount" => 250, "path"=>"/api/path3", "successCount" => 2 },
-          { "errorCount" => 255, "path"=>"/path2", "successCount" =>1 },
-          { "errorCount" => 243, "path"=>"/", "successCount"=> 1 },
+          { "errorCount" => 248, "path" => "/path1", "successCount" => 0 },
+          { "errorCount" => 250, "path" => "/api/path3", "successCount" => 2 },
+          { "errorCount" => 255, "path" => "/path2", "successCount" =>1 },
+          { "errorCount" => 243, "path" => "/", "successCount"=> 1 },
         ]
 
         output_data = JSON.parse(File.read(output_file_path + '/output.json'))
