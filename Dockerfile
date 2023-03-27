@@ -1,4 +1,6 @@
 FROM ruby:3.2
+RUN adduser --uid 1001 user
+RUN usermod -aG sudo user
 RUN apt-get update -qq && apt-get install
 WORKDIR /estagioSRE
 COPY Gemfile /estagioSRE/Gemfile
