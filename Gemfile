@@ -10,6 +10,9 @@ gem "jbuilder"
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "bootsnap", require: false
 gem 'rufus-scheduler', require: false
+gem 'prometheus-client'
+gem 'prometheus_exporter'
+gem 'file-tail'
 
 group :development, :test do
   gem 'rspec-rails'
