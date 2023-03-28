@@ -8,3 +8,16 @@ services:
     user: "1001:1001"
     ports:
       - "3000:3000"
+      - "1235:12345"
+  prometheus:
+    image: prom/prometheus:v2.33.1
+    ports:
+      - "9090:9090"
+    user: "1001:1001"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus_data:/prometheus
+  generate-logs:
+    image: ghcr.io/toledompm/log-gen:latest
+    volumes:
+      - ./log_storage:/tmp
